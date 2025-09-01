@@ -13,7 +13,7 @@ console.log("Test");
 
 app.listen(port, async () => {
   const url =
-    "mongodb+srv://rishi:G32Bkp182styCPLC@cluster0.npkwjlp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+    "";
   await mongoose.connect(url);
   console.log(`App listening on port http://localhost:${port}`);
 });
