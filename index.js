@@ -9,11 +9,9 @@ app.use(express.json());
 const port = 3000;
 
 app.use("/student", studentRouter);
-console.log("Test");
 
 app.listen(port, async () => {
-  const url =
-    "";
+  const url = "";
   await mongoose.connect(url);
   console.log(`App listening on port http://localhost:${port}`);
 });

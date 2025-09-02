@@ -3,9 +3,18 @@ import { Router } from "express";
 
 const studentRouter = Router();
 
-studentRouter.get("/", async (request, response) => {
+studentRouter.get("/:id", async (request, response) => {
   try {
-    const data = await studentModel.find();
+    const { id } = request.params;
+
+    const { name } = request.query;
+    let data = await studentModel.find();
+    if (name) {
+      data = await studentModel.find({ name });
+    }
+    if (id) {
+      data = await studentModel.findById(id);
+    }
     return response.status(200).json({ data });
   } catch (err) {
     console.log("Error", err);
