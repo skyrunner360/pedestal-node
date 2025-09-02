@@ -9,6 +9,7 @@ app.use(express.json());
 const port = 3000;
 
 app.use("/student", studentRouter);
+console.log("test commit");
 
 app.listen(port, async () => {
   const url = "";
